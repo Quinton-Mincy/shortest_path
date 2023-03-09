@@ -22,7 +22,8 @@ void enqueue(int n, int m, Node node_q[n][m], Node new_node,Queue* q){
         if(q->rear.j == m -1){
             q->rear.i+=1;
         }
-        q->rear.j = (q->rear.j+=1)%m;
+        q->rear.j+=1;
+        q->rear.j = (q->rear.j)%m;
         node_q[q->rear.i][q->rear.j] = new_node;
         q->count+=1;
     }else{
