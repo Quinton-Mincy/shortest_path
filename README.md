@@ -23,6 +23,8 @@ Next, we will take a look at the main function to get a high-level understanding
 
 ## Architecture
 
+![Screen Shot 2023-03-08 at 6 32 58 PM](https://user-images.githubusercontent.com/73136662/223913926-adbc37d0-f0fb-4ee5-9f68-9486787eefb7.png)
+
 Taking a look at the main function, up to line 18 is dedicated to reading in the contents of the text file into a buffer,
 along with some error checking to make sure that the file name given as a command line argument (CLA) is a valid file name,
 as well as checking if the file was succesfully read into the program.
