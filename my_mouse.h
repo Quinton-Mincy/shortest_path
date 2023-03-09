@@ -4,7 +4,6 @@
 #include <unistd.h>
 #include <stdbool.h>
 #include <fcntl.h>
-#include <sys/mman.h>
 #include <sys/stat.h>
 #include <errno.h>
 

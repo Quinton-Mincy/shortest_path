@@ -14,8 +14,3 @@ void init_matrix(int n, int m, char* maze, char matrix[n][m]){
         i++;
     }
 }
-char* pop_matrix(char **maze, int row_size){
-    char* row = strndup(*maze,row_size+1);
-    (*maze) += (row_size+1);
-    return row;
-}
