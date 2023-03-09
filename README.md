@@ -61,7 +61,10 @@ passed to the bfs function. The variable *dist* will actually be the exit node o
 shortest distance from the entrance to the exit, and will also act as the head of a linked list to backtrack through the maze (for
 the purposes of displaying the solution). 
 
-Lookin into the *bfs.c* file, we will see all of the functions involved in the search. The actual bfs function calls the *find_start*
+![Screen Shot 2023-03-09 at 12 01 02 AM](https://user-images.githubusercontent.com/73136662/223924441-94f012e2-05a5-4a05-9520-e2d11d7dae95.png)
+
+
+Lookin into the *bfs.c* file, we will see all of the functions involved in the search. The bfs function calls the *find_start*
 function, which combs through the maze looking for the entrance (which will always be in the first row in this example) and
 returns its coordinates in a *Point* struct. The entrance node, along with the 2 matrices, configuration information, and a node
 pointer are passed to the search function, where the algorithm takes place. The node pointer will play an important role in this
