@@ -18,13 +18,13 @@ bool empty(Queue q){
 }
 void enqueue(int n, int m, Node node_q[n][m], Node new_node,Queue* q){
     // printf("count: %d, max_size: %d, rear_j: %d, rear_i: %d\n",(*q).count,(*q).max_size,(*q).rear.j,(*q).rear.i);
-    if((*q).count < (*q).max_size){
-        if((*q).rear.j == m -1){
-            (*q).rear.i+=1;
+    if(q->count < q->max_size){
+        if(q->rear.j == m -1){
+            q->rear.i+=1;
         }
-        (*q).rear.j = ((*q).rear.j+=1)%m;
-        node_q[(*q).rear.i][(*q).rear.j] = new_node;
-        (*q).count+=1;
+        q->rear.j = (q->rear.j+=1)%m;
+        node_q[q->rear.i][q->rear.j] = new_node;
+        q->count+=1;
     }else{
         printf("Error: Queue Overflow!!\n");
     }
