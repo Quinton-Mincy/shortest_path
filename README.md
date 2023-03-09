@@ -4,7 +4,7 @@
 
 Generate a 50x50 maze, then find the shortest path (if a path exists)
 
------------------------------- On MacOS
+------------------------------ On MacOS (should work on Linux, but not yet tested)
 
 $> ruby path.rb 50 50 "* o12"
 
