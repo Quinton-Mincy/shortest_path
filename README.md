@@ -119,5 +119,5 @@ the maze matrix values that lie along the shortest path to *o* as seen in the im
 
 This project has covered many topics besides BFS such as matrix manipulation, the queue and linked list data structures, utilizing stack memory, and how to use pointers
 effectively. There are many ways to solve this problem, and this is configuration is the one that I decided to implement. Although this is a fun problem to figure out
-in its own right, the knowledge gained from it could be used in project involving GPS, or even image/video processing software for a vehicle to traverse a space in the 
+in its own right, the knowledge gained from it could be used in project involving GPS, networking applications, or even image/video processing software for a vehicle to traverse a space in the 
 shortest distance possible. 
