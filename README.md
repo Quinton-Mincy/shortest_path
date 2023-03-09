@@ -67,9 +67,11 @@ the purposes of displaying the solution).
 Lookin into the *bfs.c* file, we will see all of the functions involved in the search. The bfs function calls the *find_start*
 function, which combs through the maze looking for the entrance (which will always be in the first row in this example) and
 returns its coordinates in a *Point* struct. The entrance node, along with the 2 matrices, configuration information, and a node
-pointer are passed to the search function, where the algorithm takes place. The node pointer will play an important role in this
+pointer are passed to the *search* function, where the algorithm takes place. The node pointer will play an important role in this
 implementation, as it will be used as a temporary store for all of the nodes we visit, update them with relevant information, and
 ultimately be returned as a pointer to the exit node which we just discussed. 
+
+![Screen Shot 2023-03-09 at 12 03 13 AM](https://user-images.githubusercontent.com/73136662/223925262-92f36698-b539-49fd-a6ab-0cfef880332a.png)
 
 The first few lines are just initialization of variables. First, we initialize a FIFO queue which will hold the each node we visit, as
 well as each of their neighbors. We then initialize the entrance node *src*, which wraps the entrance coordinates into the
