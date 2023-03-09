@@ -3,7 +3,7 @@
 if ARGV.count < 3 || ARGV[2].length < 5
 	puts "./usage height width characters"
 else
-	file = File.open("example.txt", "w")
+	file = File.open("maze.txt", "w")
 	height, width, chars = ARGV[0].to_i, ARGV[1].to_i, ARGV[2]
 	entry = rand(width - 4) + 2
 	entry2 = rand(width - 4) + 2

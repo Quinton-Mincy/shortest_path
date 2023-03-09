@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS += -Wall -Werror -Wextra
 CFLAGS_DEBUG = $(CFLAGS)
-MAIN = mouse
+MAIN = solve_maze
 SRCS = main.c matrix.c queue.c maze_config.c bfs.c display.c error.c
 OBJS = $(SRCS:.c=.o) 
 
