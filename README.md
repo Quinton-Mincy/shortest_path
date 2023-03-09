@@ -15,6 +15,8 @@ Since the nodes in the maze are unweighted, algorithms such as Dijkstra's algori
 is a randomly generated field of obstacles (*) and traversable terrain (empty space), with a special character denoting the entrance
 and exit of the maze (1 and 2 respectively in this example). An image of a typical maze can be seen below.
 
+![Screen Shot 2023-03-08 at 10 26 03 PM](https://user-images.githubusercontent.com/73136662/223912971-93bf269f-839e-445d-9271-dd991d6c0977.png)
+
 An added constraint I added to my implementation was to forgo the use of dynamic memory allocation. 
 
 Next, we will take a look at the main function to get a high-level understanding of the architecture of the program.
