@@ -38,6 +38,8 @@ Of course there is much code behind these 3 lines in the main function, and we w
 
 ## The algorithm
 
+![Screen Shot 2023-03-08 at 9 35 39 PM](https://user-images.githubusercontent.com/73136662/223913706-49508ad6-6a94-46ff-940a-be2503e13a69.png)
+
 Firstly we define a 2D matrix called *nodes* that map to every point in the coordinate plane of the maze. I do this through the use
 of variable length arrays (VLAs). The use of variable length arrays is usually not recommended, but I define the maximum dimensions
 of the array in the header file, and if they are exceeded in the maze configuration declaration, then the program will return EXIT_FAILURE.
