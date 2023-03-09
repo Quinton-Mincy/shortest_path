@@ -5,6 +5,7 @@
 Generate a 50x50 maze, then find the shortest path (if a path exists)
 
 $> ruby path.rb 50 50 "* o12"
+
 $> ./solve_maze maze.txt
 
 ## Overview
