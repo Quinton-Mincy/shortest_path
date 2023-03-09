@@ -91,7 +91,7 @@ We now enter into the bulk of our BFS algorithm. The next 24 lines of code essen
     character (*), add them to the queue
     4. Repeat
 
-By following these steps, we are guaranteed to find the shortest path in an unweighted graph. In BFS, the first time we encounter the target node, 
+By following these steps (shown in code below), we are guaranteed to find the shortest path in an unweighted graph. In BFS, the first time we encounter the target node, 
 the exit node in our case, we will have traversed the minimum *depth* or *levels*. This is all due to the functionality of the FIFO queue. By its
 very nature, we will analyze all nodes at a given distance from the start node before moving on to a further distance, or the next level. For
 instance, when we analyze the entrance node, we will enqueue its only neighbor, the node directly below it (our maze has a single entrance and exit), which
@@ -101,6 +101,8 @@ enqueue the neighbors of each of those nodes, we will examine them in the order 
 moving on to the nodes that are 1 step deeper than the ones we are currently looking at. By doing this, we ensure that once we find the target node,
 whatever *depth* we are currently at is the shortest distance away from the starting point. Their may be other nodes at the same level that also reach the 
 target node, but our algorithm terminate after the first node that can access the exit is found.
+
+![Screen Shot 2023-03-09 at 12 05 49 AM](https://user-images.githubusercontent.com/73136662/223925691-5c7883c9-ae1e-4bf8-b971-e5fe0628f171.png)
 
 Also, to again reference the *curr_node* pointer, it acts as the temporary reference of every node that we load into the queue. Looking at line 64, it is used
 to be the previous node of each of its neighbors, and its distance from the source is also incremented by one, maintaining the reality that any neighbor to a
