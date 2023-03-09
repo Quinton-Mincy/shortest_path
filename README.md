@@ -5,6 +5,7 @@
 Generate a 50x50 maze, then find the shortest path (if a path exists)
 
 $> ruby path.rb 50 50 "* o12"
+
 $> ./solve_maze maze.txt
 
 ## Overview
@@ -14,11 +15,15 @@ Since the nodes in the maze are unweighted, algorithms such as Dijkstra's algori
 is a randomly generated field of obstacles (*) and traversable terrain (empty space), with a special character denoting the entrance
 and exit of the maze (1 and 2 respectively in this example). An image of a typical maze can be seen below.
 
+![Screen Shot 2023-03-08 at 10 59 08 PM](https://user-images.githubusercontent.com/73136662/223913609-076f97bd-2c18-4a3d-b120-1a6702403261.png)
+
 An added constraint I added to my implementation was to forgo the use of dynamic memory allocation. 
 
 Next, we will take a look at the main function to get a high-level understanding of the architecture of the program.
 
 ## Architecture
+
+![Screen Shot 2023-03-08 at 6 32 58 PM](https://user-images.githubusercontent.com/73136662/223913926-adbc37d0-f0fb-4ee5-9f68-9486787eefb7.png)
 
 Taking a look at the main function, up to line 18 is dedicated to reading in the contents of the text file into a buffer,
 along with some error checking to make sure that the file name given as a command line argument (CLA) is a valid file name,
@@ -34,6 +39,8 @@ in 3 lines!
 Of course there is much code behind these 3 lines in the main function, and we will dive into that now.
 
 ## The algorithm
+
+![Screen Shot 2023-03-08 at 9 35 39 PM](https://user-images.githubusercontent.com/73136662/223913706-49508ad6-6a94-46ff-940a-be2503e13a69.png)
 
 Firstly we define a 2D matrix called *nodes* that map to every point in the coordinate plane of the maze. I do this through the use
 of variable length arrays (VLAs). The use of variable length arrays is usually not recommended, but I define the maximum dimensions
