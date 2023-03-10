@@ -92,13 +92,21 @@ We now enter into the bulk of our BFS algorithm. The next 24 lines of code essen
     4. Repeat
 
 By following these steps (shown in code below), we are guaranteed to find the shortest path in an unweighted graph. In BFS, the first time we encounter the target node, 
-the exit node in our case, we will have traversed the minimum *depth* or *levels*. This is all due to the functionality of the FIFO queue. By its
+the exit node in our case, we will have traversed the minimum *depth* or *levels* (not to be confused with depth first search [(DFS))](https://en.wikipedia.org/wiki/Depth-first_search). This is all due to the functionality of the FIFO queue. By its
 very nature, we will analyze all nodes at a given distance from the start node before moving on to a further distance, or the next level. For
 instance, when we analyze the entrance node, we will enqueue its only neighbor, the node directly below it (our maze has a single entrance and exit), which
-is a distance of 1 away from the start node. The next iteration of the search, we will enqueue the neighbors (maximum of 4) of the node directly below the 
+is a distance of 1 away from the start node. The next iteration of the search, we will enqueue the neighbors of the node directly below the 
 entrance, each a distance of 2 away from the start node. After that, we will sequentially dequeue all of the neighbors we just added, and even though we will
 enqueue the neighbors of each of those nodes, we will examine them in the order that they were added, i.e. we will examine each node of a given *depth* before
-moving on to the nodes that are 1 step deeper than the ones we are currently looking at. By doing this, we ensure that once we find the target node,
+moving on to the nodes that are 1 step deeper than the ones we are currently looking at. You can see a pictoral representation of this below.
+
+![Screen Shot 2023-03-10 at 12 29 00 PM](https://user-images.githubusercontent.com/73136662/224383081-a93dec4b-8913-4e65-8a25-51a9841c84f1.png)
+
+The first insertion into the queue, N1, is the node directly below the entrance. It is immediatly dequeued, and its 3 neighbors (N2<sub>1</sub>, N2<sub>2</sub>, N2<sub>3</sub>) are added to the queue at the *head*, which we will see is analogous to the "back of the line" in a FIFIO queue. In this example you can think of N1 as "node or neighbor at distance 1 from the start node", and the subscipted nodes denote the number of nodes at the specified depth. If you have not noticed already, when adding a nodes neighbors to the queue, we will only add a maximum of 3 nodes, as at least one of them are a node that we have previously visisted (i.e. the current node was previously the neighbor of another), and we do not add duplicates to the queue. Nonetheless, as we move to the next round of pushing and popping, we also move on to the next *depth* of the search.
+
+As you can see, the nodes added after N2<sub>3</sub> are N3 nodes, or nodes a distance of 3 away from the start node. These 3 are the neighbors of N2<sub>1</sub>, which has just been dequeued, showing how the FIFO queue (First In First Out) gets its name. This brings us to the final round shown at the bottom of the image. Be sure to note that the nodes in the queue have been shifted. Out of the frame, N2<sub>2</sub> has been dequeued, and there are now 3 empty spaces in the front of the queue (reference the sub script numbers to confirm this for yourself). In this round, notice that the 3 neighbors of N2<sub>2</sub> that were added (N3<sub>4</sub>, N3<sub>5</sub>, N3<sub>6</sub>) are at the same level as the nodes added by N2<sub>1</sub>. This demonstrates that not only will the nodes added to the queue be dealt with in the order they were added, but also that each *depth* will be completely explored before moving on to the next level. 
+
+By iterating through this process, we ensure that once we find the target node,
 whatever *depth* we are currently at is the shortest distance away from the starting point. Their may be other nodes at the same level that also reach the 
 target node, but our algorithm terminate after the first node that can access the exit is found.
 
