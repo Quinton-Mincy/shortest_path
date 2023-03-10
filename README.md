@@ -92,7 +92,7 @@ We now enter into the bulk of our BFS algorithm. The next 24 lines of code essen
     4. Repeat
 
 By following these steps (shown in code below), we are guaranteed to find the shortest path in an unweighted graph. In BFS, the first time we encounter the target node, 
-the exit node in our case, we will have traversed the minimum *depth* or *levels* (not to be confused with depth first search [(DFS))](https://en.wikipedia.org/wiki/Depth-first_search). This is all due to the functionality of the FIFO queue. By its
+the exit node in our case, we will have traversed the minimum *depth* or *levels* (not to be confused with depth first search [(DFS)](https://en.wikipedia.org/wiki/Depth-first_search)). This is all due to the functionality of the FIFO queue. By its
 very nature, we will analyze all nodes at a given distance from the start node before moving on to a further distance, or the next level. For
 instance, when we analyze the entrance node, we will enqueue its only neighbor, the node directly below it (our maze has a single entrance and exit), which
 is a distance of 1 away from the start node. The next iteration of the search, we will enqueue the neighbors of the node directly below the 
@@ -100,7 +100,7 @@ entrance, each a distance of 2 away from the start node. After that, we will seq
 enqueue the neighbors of each of those nodes, we will examine them in the order that they were added, i.e. we will examine each node of a given *depth* before
 moving on to the nodes that are 1 step deeper than the ones we are currently looking at. You can see a pictoral representation of this below.
 
-![Screen Shot 2023-03-10 at 12 29 00 PM](https://user-images.githubusercontent.com/73136662/224383081-a93dec4b-8913-4e65-8a25-51a9841c84f1.png)
+![Screen Shot 2023-03-10 at 1 36 36 PM](https://user-images.githubusercontent.com/73136662/224397525-e7fcbfee-be3a-428b-bb7b-96b8f250a030.png)
 
 The first insertion into the queue, N1, is the node directly below the entrance. It is immediatly dequeued, and its 3 neighbors (N2<sub>1</sub>, N2<sub>2</sub>, N2<sub>3</sub>) are added to the queue at the *head*, which we will see is analogous to the "back of the line" in a FIFIO queue. In this example you can think of N1 as "node or neighbor at distance 1 from the start node", and the subscipted nodes denote the number of nodes at the specified depth. If you have not noticed already, when adding a nodes neighbors to the queue, we will only add a maximum of 3 nodes, as at least one of them are a node that we have previously visisted (i.e. the current node was previously the neighbor of another), and we do not add duplicates to the queue. Nonetheless, as we move to the next round of pushing and popping, we also move on to the next *depth* of the search.
 
@@ -122,6 +122,10 @@ I change its value to NULL in the case where their is no solution, but I could j
 bfs function to accommodate this. Furthermore, since each neihbor node added to the queue is equipped with the memory address of its predecessor, when we find the 
 exit node, we can traverse back to the entry node as mentioned previously. This allows us to display the path from start to finish (or finish to start) by modifying
 the maze matrix values that lie along the shortest path to *o* as seen in the image at the start of this section.
+
+## Complexity
+
+This implementation has a time and space complexity of O(m*n) where m and n are the dimensions of the graph (the 2D matrix representation of the coordinates of the maze): (m*n) representing the sum total of all of the nodes. This could also be written as O(V) where V is the number of vertices (nodes). Through our use of a queue and our auxiliary *visited* matrix, we ensure that in the worse case, we will visit every node (V) only once, so we only need to reserve enough space to hold the information of every node. 
 
 ## Summary 
 
