@@ -21,7 +21,7 @@ $>.\solve_maze.exe maze.txt
 For this project we will use a breadth first search approach, with a few optimizations, to find the shortest path through a maze.
 Since the nodes in the maze are unweighted, algorithms such as Dijkstra's algorithm and A* are not applicable. The maze provided
 is a randomly generated field of obstacles (*) and traversable terrain (empty space), with a special character denoting the entrance
-and exit of the maze (1 and 2 respectively in this example). An image of a typical maze can be seen below.
+and exit of the maze (1 and 2 respectively in this example). The format of the maze is determined by the user when calling the ruby script from a terminal in the fomat as seen above. An image of a typical maze can be seen below.
 
 ![Screen Shot 2023-03-08 at 10 59 08 PM](https://user-images.githubusercontent.com/73136662/223913609-076f97bd-2c18-4a3d-b120-1a6702403261.png)
 
