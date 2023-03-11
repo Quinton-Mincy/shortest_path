@@ -1,3 +1,6 @@
+# Author: Gaetan Juvin
+
+
 #!/usr/bin/env ruby
 
 if ARGV.count < 3 || ARGV[2].length < 5
